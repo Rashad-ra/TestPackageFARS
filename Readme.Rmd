@@ -1,0 +1,10 @@
+---
+title: "TestPackageFARS"
+output: 
+  rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Test_Package_FARS}
+---
+
+```{r, echo=FALSE}
+
