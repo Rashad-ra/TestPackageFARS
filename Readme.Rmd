@@ -3,8 +3,11 @@ title: "TestPackageFARS"
 output: 
   rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Test_Package_FARS}
+  %\VignetteIndexEntry{TestPackageFARS}
 ---
 
 ```{r, echo=FALSE}
 
+<!-- badges: start -->
+  [![R-CMD-check](https://github.com/Rashad-ra/TestPackageFARS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Rashad-ra/TestPackageFARS/actions/workflows/R-CMD-check.yaml)
+  <!-- badges: end -->
