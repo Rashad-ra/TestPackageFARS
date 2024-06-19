@@ -1,18 +1,61 @@
 ---
-title: "TestPackageFARS"
+title: "Introduction to TestPackageFARS"
 author: "Rashad Haidar"
 date: "June 16, 2024"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{Introduction to TestPackageFARS}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
   echo = TRUE,
   warning = FALSE,
   message = FALSE,
   fig.align = "center"
 )
+```
+# Install from CRAN
+Install the package from CRAN using the following command:
+```
+install.packages("TestPackageFARS")
+```
+
+##Introduction
+This package is designed for analyzing and visualizing traffic accident data from the Fatality Analysis Reporting System (FARS). The functions provided allow users to read FARS data files, create filenames for specific years, read data for multiple years, summarize accident data by year and month, and plot accident locations on a map.
+
+## Reading FARS Data
+The core function for reading FARS data is 'fars_read', which reads a CSV file and returns it as a tibble. This function ensures that the file exists before attempting to read it, providing a clear error message if the file is missing.
+```
+fars_data <- fars_read("example.csv.bz2")
+```
+##Creating FARS Filenames
+
+To streamline the process of working with FARS data files from different years, the 'make_filename' function generates the appropriate filename for a given year.
+```
+make_filename(2013)
+```
+##Reading FARS Data for Multiple Years
+
+The 'fars_read_years' function allows for reading FARS data across multiple years, returning a list of tibbles. This function handles errors gracefully, issuing warnings for invalid years and returning NULL for those years.
+```
+data_list <- fars_read_years(c(2013, 2014, 2015))
+```
+##Summarizing FARS Data
+
+To obtain a summary of accidents by year and month, the 'fars_summarize_years' function aggregates the data, providing a concise overview of the number of accidents.
+```
+summary <- fars_summarize_years(c(2013, 2014, 2015))
+```
+##Plotting FARS Data
+
+For visual analysis, the fars_map_state function plots FARS data on a map for a specified state and year, enabling geographic visualization of accident locations.
+```
+fars_map_state(1, 2013)
+```
+
+
