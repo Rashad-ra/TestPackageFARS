@@ -1,30 +1,23 @@
 ---
-title: "Introduction to TestPackageFARS"
-author: "Rashad Haidar"
-date: "June 16, 2024"
+title: "intro"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction to TestPackageFARS}
+  %\VignetteIndexEntry{intro}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include=FALSE}
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  echo = TRUE,
-  warning = FALSE,
-  message = FALSE,
-  fig.align = "center"
+  comment = "#>"
 )
 ```
 # Install from CRAN
 Install the package from CRAN using the following command:
+```{r setup}
+library(TestPackageFARS)
 ```
-install.packages("TestPackageFARS")
-```
-
 ##Introduction
 This package is designed for analyzing and visualizing traffic accident data from the Fatality Analysis Reporting System (FARS). The functions provided allow users to read FARS data files, create filenames for specific years, read data for multiple years, summarize accident data by year and month, and plot accident locations on a map.
 
@@ -56,6 +49,3 @@ summary <- fars_summarize_years(c(2013, 2014, 2015))
 For visual analysis, the fars_map_state function plots FARS data on a map for a specified state and year, enabling geographic visualization of accident locations.
 ```
 fars_map_state(1, 2013)
-```
-
-
