@@ -1,7 +1,6 @@
 library(usethis)
 library(devtools)
 
-use_github_action()
 usethis::use_vignette("intro")
 #' Read a FARS data file
 #'
