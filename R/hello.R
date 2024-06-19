@@ -1,6 +1,6 @@
 library(usethis)
 library(devtools)
-
+library(roxygen2)
 usethis::use_vignette("intro")
 #' Read a FARS data file
 #'
@@ -119,6 +119,8 @@ fars_map_state <- function(state.num, year) {
     graphics::points(LONGITUD, LATITUDE, pch = 46)
   })
 }
+
+roxygenize()
 
 
 
